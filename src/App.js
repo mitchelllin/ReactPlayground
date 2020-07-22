@@ -17,6 +17,7 @@ import ToastWrapper from "./components/ToastWrapper";
 import InternInfoDisplay from "./components/InternInfoDisplay";
 import LightModal from "./components/lightModal";
 import PopOverTrigger from "./components/PopOverButton";
+import DropdownButtonconst from "./components/DropdownButton";
 /* Models/Services */
 
 import { Intern } from "./model/Intern";
@@ -57,6 +58,14 @@ let adil = new Intern(
   "Rising Junior at UMB",
   "Intern (Web/Mobile Dev)",
   "https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png",
+  new Date("7/20/20")
+);
+
+let mitchell = new Intern(
+  "Mitchell",
+  "Rising Junior at Cornell University",
+  "Intern (Web Dev)",
+  "https://media-exp1.licdn.com/dms/image/C4E03AQEEMviGfsU4Lg/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=YTPmzNhGE-mcYMhmdjbyuls86C4zjZVN_4Utp0UHZ3o",
   new Date("7/20/20")
 );
 const App = () => {
@@ -122,6 +131,8 @@ const App = () => {
                 <div>Hi!!</div>
               </InternInfoDisplay>
             </Col>
+            </Row>
+            <Row>
             <Col><InternInfoDisplay intern={adil} onClick={()=> { let content = "This was also logged to the console"; 
             console.log(content); alert(content);}}>
               <div>
@@ -132,6 +143,18 @@ const App = () => {
                 <div>In Progress</div>
               </PopOverTrigger>
             </Col>         
+            <Col>
+              <InternInfoDisplay
+                intern={mitchell}
+                onClick={() => {
+                  let content = "This was also logged to the console";
+                  console.log(content);
+                  alert(content);
+                }}
+              >
+                <div>Hi everyone!</div>
+              </InternInfoDisplay>
+            </Col>
           </Row>
         </Container>
         <ToastWrapper title="Welcome!">
@@ -139,6 +162,8 @@ const App = () => {
           🎉 🎉 🎉 🎉
         </span>
         </ToastWrapper>
+        <DropdownButtonconst text="Click for a Dropdown!">
+        </DropdownButtonconst>
       </Jumbotron>
 
       <Jumbotron hidden>
