@@ -234,9 +234,9 @@ const App = () => {
                 <div>Hello everyone!</div>
               </InternInfoDisplay>
               <DropdownButton text = "Click here for a dropdown!" dropdownlist = {[
-                { name: "Custom Button Name 1", link: "#/button1"},
-                { name: "Custom Button Name 2", link: "#/button2"},
-                { name: "Custom Button Name 3", link: "#/button3"}
+                {key: "1", name: "Custom Button Name 1", link: "#/button1"},
+                {key: "2", name: "Custom Button Name 2", link: "#/button2"},
+                {key: "3", name: "Custom Button Name 3", link: "#/button3"}
                 ]} /> 
               </Col>
             </Row>
