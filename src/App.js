@@ -19,7 +19,7 @@ import LightModal from "./components/lightModal";
 import FadeText from "./components/FadeText";
 import NavBar from "./components/navBar"
 import PopOverTrigger from "./components/PopOverButton";
-import DropdownButtonconst from "./components/DropdownButton";
+import DropdownButton from "./components/DropdownButton";
 import LanguageList from './components/LanguageList';
 
 /* Models/Services */
@@ -89,12 +89,11 @@ let kyle = new Intern(
 
 let mitchell = new Intern(
   "Mitchell",
-  "Rising Junior at Cornell University",
+  "CS Student from NY",
   "Intern (Web Dev)",
-  "https://media-exp1.licdn.com/dms/image/C4E03AQEEMviGfsU4Lg/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=YTPmzNhGE-mcYMhmdjbyuls86C4zjZVN_4Utp0UHZ3o",
+  "https://www.lawschool.cornell.edu/_cs_apps/pt_photo_gallery/uploads/mainphotogallery/fullsizeimage/Photogallery_Ithacapage_8.png",
   new Date("7/20/20")
 );
-
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -161,8 +160,8 @@ const App = () => {
                 <div>Hi!!</div>
               </InternInfoDisplay>
             </Col>
-            </Row>
-            <Row>
+          </Row>
+          <Row>
             <Col><InternInfoDisplay intern={adil} onClick={()=> { let content = "This was also logged to the console"; 
             console.log(content); alert(content);}}>
               <div>
@@ -172,20 +171,7 @@ const App = () => {
               <PopOverTrigger text="Click to see a popover">
                 <div>In Progress</div>
               </PopOverTrigger>
-            </Col>         
-            <Col>
-              <InternInfoDisplay
-                intern={mitchell}
-                onClick={() => {
-                  let content = "This was also logged to the console";
-                  console.log(content);
-                  alert(content);
-                }}
-              >
-                <div>Hi everyone!</div>
-              </InternInfoDisplay>
-            </Col>
-          <Row>
+            </Col>        
             <Col>
                 <InternInfoDisplay
                   intern={kyle}
@@ -205,6 +191,8 @@ const App = () => {
                 ]} /> 
                 </InternInfoDisplay>
               </Col> 
+              </Row>
+              <Row>
                   <Col>
                    <InternInfoDisplay
                 intern={henry}
@@ -215,10 +203,9 @@ const App = () => {
                 }}
               >
                 <div>Excited to be working with you all!</div>
-              </InternInfoDisplay></Col>
-                  </Row>
+              </InternInfoDisplay>
+              </Col>
               <br></br>
-              <Row className='my-1'>
               <Col>
               <InternInfoDisplay
                 intern={disha}
@@ -234,13 +221,31 @@ const App = () => {
               <div><FadeText></FadeText></div>
             </Col>
            </Row>
+           <Row>
+              <Col>
+                   <InternInfoDisplay
+                intern={mitchell}
+                onClick={() => {
+                  let content = "This was also logged to the console";
+                  console.log(content);
+                  alert(content);
+                }}
+              >
+                <div>Hello everyone!</div>
+              </InternInfoDisplay>
+              <DropdownButton text = "Click here for a dropdown!" dropdownlist = {[
+                { name: "Custom Button Name 1", link: "#/button1"},
+                { name: "Custom Button Name 2", link: "#/button2"},
+                { name: "Custom Button Name 3", link: "#/button3"}
+                ]} /> 
+              </Col>
+            </Row>
+        </Container>
         <ToastWrapper title="Welcome!">
         <span role="img" aria-label="tada">
           🎉 🎉 🎉 🎉
         </span>
         </ToastWrapper>
-        <DropdownButtonconst text="Click for a Dropdown!">
-        </DropdownButtonconst>
       </Jumbotron>
 
       <Jumbotron hidden>
