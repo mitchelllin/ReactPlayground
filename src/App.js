@@ -16,8 +16,14 @@ import InputField from "./components/InputField";
 import ToastWrapper from "./components/ToastWrapper";
 import InternInfoDisplay from "./components/InternInfoDisplay";
 import LightModal from "./components/lightModal";
+import FadeText from "./components/FadeText";
+import NavBar from "./components/navBar"
 import PopOverTrigger from "./components/PopOverButton";
 import DropdownButtonconst from "./components/DropdownButton";
+import LanguageList from './components/LanguageList';
+
+
+
 /* Models/Services */
 
 import { Intern } from "./model/Intern";
@@ -27,7 +33,7 @@ let amonte = new Intern(
   "Amonte",
   "Just a regular Joe named Amonte.",
   "Intern Lead",
-  "https://media-exp1.licdn.com/dms/image/C5603AQEb3xbVkqos3A/profile-displayphoto-shrink_400_400/0?e=1600300800&v=beta&t=CsfxpsRe0NU7Rj2HybugKe0LS90IHLNtC3ES82mfmLA",
+  "https://cdn.ebaumsworld.com/mediaFiles/picture/730195/86187705.jpg",
   new Date("1/1/21")
 );
 let sanjana = new Intern(
@@ -45,6 +51,13 @@ let shayan = new Intern(
   new Date("9/8/20")
 );
 
+let henry = new Intern(
+  "Henry",
+  "From New York",
+  "Backend Web Intern",
+  "https://www.history.com/.image/t_share/MTU3ODc5MDgyNjY5OTc1MjYz/new-york-city.jpg",
+  new Date("9/1/20"));
+
 let sonia = new Intern(
   "Sonia",
   "Rising Sophomore at UW",
@@ -53,12 +66,27 @@ let sonia = new Intern(
   new Date("9/25/20")
 );
 
+let disha = new Intern (
+  "Disha",
+  "Believe in yourself",
+  "Intern (Mobile Developer)",
+  "https://wallpaperaccess.com/full/142733.jpg",
+  new Date("8/30/20")
+  );
 let adil = new Intern(
   "Adil ",
   "Rising Junior at UMB",
   "Intern (Web/Mobile Dev)",
   "https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png",
   new Date("7/20/20")
+  );
+
+let kyle = new Intern(
+  "Kyle",
+  "Rising Sophomore at Grinnell College",
+  "Intern (Web/Mobile Dev)",
+  "https://www.psdstack.com/wp-content/uploads/2016/10/featured-copyright-free-mages.jpg",
+  new Date("8/20/20")
 );
 
 let mitchell = new Intern(
@@ -68,10 +96,14 @@ let mitchell = new Intern(
   "https://media-exp1.licdn.com/dms/image/C4E03AQEEMviGfsU4Lg/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=YTPmzNhGE-mcYMhmdjbyuls86C4zjZVN_4Utp0UHZ3o",
   new Date("7/20/20")
 );
+
+
 const App = () => {
   const [show, setShow] = useState(false);
+  const NavTitle=['The PlayGround','Home','Meet the Interns','TurnUp Activism'];
   return(
     <Container className="p-12">
+      <NavBar NavTitles= {NavTitle}/>
       <Jumbotron>
         <h1 className="header">TurnUp React Playground</h1>
         <Container fluid className="p-6">
@@ -100,7 +132,7 @@ const App = () => {
                 <div>Hi, nice to meet you!</div>
               </InternInfoDisplay>
             </Col>
-          </Row>
+           </Row>
           <Row className='my-1'>
             <Col>
               <LightModal show={show}
@@ -155,8 +187,55 @@ const App = () => {
                 <div>Hi everyone!</div>
               </InternInfoDisplay>
             </Col>
-          </Row>
-        </Container>
+          <Row>
+            <Col>
+                <InternInfoDisplay
+                  intern={kyle}
+                  onClick={() => {
+                    let content = "This was also logged to the console";
+                    console.log(content);
+                    alert(content);
+                  }}>
+                  <div>Looking forward to working with you all</div>
+                  <br></br>
+                  <LanguageList languages = {[
+                { name: 'Java', key: '1'},
+                { name: 'JavaScript', key: '2'},
+                { name: 'Python', key: '3'},
+                { name: 'Swift', key: '4'},
+                { name: 'C', key: '5'},
+                ]} /> 
+                </InternInfoDisplay>
+              </Col> 
+                  <Col>
+                   <InternInfoDisplay
+                intern={henry}
+                onClick={() => {
+                  let content = "This was also logged to the console";
+                  console.log(content);
+                  alert(content);
+                }}
+              >
+                <div>Excited to be working with you all!</div>
+              </InternInfoDisplay></Col>
+                  </Row>
+              <br></br>
+              <Row className='my-1'>
+              <Col>
+              <InternInfoDisplay
+                intern={disha}
+                onClick={() => {
+                  let content = "This was also logged to the console";
+                  console.log(content);
+                  alert(content);
+                }}
+              >
+                <div>Believt in yourself!</div>
+              </InternInfoDisplay>
+              <br></br>
+              <div><FadeText></FadeText></div>
+            </Col>
+           </Row>
         <ToastWrapper title="Welcome!">
         <span role="img" aria-label="tada">
           🎉 🎉 🎉 🎉
