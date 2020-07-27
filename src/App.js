@@ -22,8 +22,6 @@ import PopOverTrigger from "./components/PopOverButton";
 import DropdownButtonconst from "./components/DropdownButton";
 import LanguageList from './components/LanguageList';
 
-
-
 /* Models/Services */
 
 import { Intern } from "./model/Intern";
