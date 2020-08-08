@@ -99,6 +99,14 @@ let luis = new Intern(
   "https://i.pinimg.com/600x315/88/5b/7b/885b7b783181234c51ea17ec48a02506.jpg",
   new Date("8/30/20")
 );
+
+let mitchell = new Intern(
+  "Mitchell", 
+  "CS Student from NY", 
+  "Intern (Web Development)", 
+  "http://courses.cornell.edu/mime/media/41/13277/LandingPage1819.jpg",
+  new Date("8/8/20")
+);
  
 
 const Playground = () => {
